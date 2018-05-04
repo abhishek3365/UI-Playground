@@ -4,16 +4,15 @@
   </div>
   <div class="main-body">
     <kendo-splitter style="height: 100%;">
-      <kendo-splitter-pane [collapsible]="true" size="20%">
-
+      <kendo-splitter-pane [collapsible]="true" [resizable]="false" size="20%">
+        <app-tree-view></app-tree-view>
       </kendo-splitter-pane>
       <kendo-splitter-pane  >
-
+        <app-map></app-map>
       </kendo-splitter-pane>
-      <kendo-splitter-pane [collapsible]="true" size="20%">
-
+      <kendo-splitter-pane [collapsible]="true" [resizable]="false" size="20%">
+        <app-tree-view></app-tree-view>
       </kendo-splitter-pane>
-      
     </kendo-splitter>
   </div>
 </div>

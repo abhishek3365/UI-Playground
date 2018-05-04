@@ -1,3 +1,11 @@
-<p>
-  tree-view works!
-</p>
+<div style="padding: 10px">
+  <kendo-treeview
+      [nodes]="data"
+      textField="text"
+      kendoTreeViewExpandable
+      kendoTreeViewSelectable
+      kendoTreeViewHierarchyBinding
+      childrenField="items"
+  >
+  </kendo-treeview>
+</div>

@@ -7,10 +7,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { TreeViewComponent } from './components/tree-view/tree-view.component';
 import { ItemFormComponent } from './components/item-form/item-form.component';
 import { MapComponent } from './components/map/map.component';
-// Import the Animations module
+import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// Import the ButtonsModule
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { SplitterModule } from '@progress/kendo-angular-layout';
 
@@ -26,7 +24,8 @@ import { SplitterModule } from '@progress/kendo-angular-layout';
     BrowserModule,
     BrowserModule,
     ButtonsModule,
-    SplitterModule
+    SplitterModule,
+    TreeViewModule
   ],
   providers: [],
   bootstrap: [AppComponent]
