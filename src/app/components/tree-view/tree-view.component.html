@@ -1,11 +1,16 @@
 <div style="padding: 10px">
   <kendo-treeview
-      [nodes]="data"
+      [nodes]="rootItems"
       textField="text"
+      [hasChildren]="hasChildren"
+      [children]="fetchChildren"
       kendoTreeViewExpandable
       kendoTreeViewSelectable
-      kendoTreeViewHierarchyBinding
-      childrenField="items"
   >
+    <ng-template kendoTreeViewNodeTemplate let-dataItem>
+      {{dataItem.NAME}}
+    </ng-template>
+
   </kendo-treeview>
 </div>
+<span class="k-i-loading k-icon" style="font-size: 64px;"></span>

@@ -13,6 +13,8 @@ import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { SplitterModule } from '@progress/kendo-angular-layout';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
+import { ItemsService } from './services/items.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,10 @@ import { AppMaterialModule } from './app-material.module';
     TreeViewModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    AppMaterialModule
+    AppMaterialModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ ItemsService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
