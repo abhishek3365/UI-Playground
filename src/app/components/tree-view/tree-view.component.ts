@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ItemsService } from '../../services/items.service';
 import { Subscription } from 'rxjs/Subscription';
 import { of } from 'rxjs/observable/of';
+import { ItemStatus } from '../../model/item-status.model';
 
 @Component({
   selector: 'app-tree-view',
@@ -36,6 +37,29 @@ export class TreeViewComponent implements OnInit , OnDestroy{
         return of(item.children);
     }
     
+    getColor( status : string ) {
+        if( !status )
+            return;
+        
+        switch(status){
+            case ItemStatus.FROZEN : return "#000000";
+            case ItemStatus.MALFUNCTION : return "#ffc000";
+            case ItemStatus.WARNING : return "#c00000";
+            case ItemStatus.MAINTENANCE : return "#5b9db5";
+            case ItemStatus.OK : return "#92d050";
+        }
+    }
+
+    getSrc( status : string ){
+        switch(status){
+            case ItemStatus.FROZEN : return "assets/frozen.png";
+            case ItemStatus.MALFUNCTION : return "assets/malfunction.png";
+            case ItemStatus.WARNING : return "assets/warning.png";
+            case ItemStatus.MAINTENANCE : return "assets/maintenance.png";
+            case ItemStatus.OK : return "assets/ok.png";
+        }
+    }
+
     ngOnDestroy() {
         this.itemsSubscription.unsubscribe();
     }

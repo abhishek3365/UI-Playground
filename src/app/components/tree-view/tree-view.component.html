@@ -1,16 +1,24 @@
-<div style="padding: 10px">
-  <kendo-treeview
-      [nodes]="rootItems"
-      textField="text"
-      [hasChildren]="hasChildren"
-      [children]="fetchChildren"
-      kendoTreeViewExpandable
-      kendoTreeViewSelectable
-  >
-    <ng-template kendoTreeViewNodeTemplate let-dataItem>
-      {{dataItem.NAME}}
-    </ng-template>
+<div style="text-align: center; height: 100%;">
 
+  <div style="padding: 10px">
+    <kendo-treeview
+    [nodes]="rootItems"
+    textField="text"
+    [hasChildren]="hasChildren"
+    [children]="fetchChildren"
+    kendoTreeViewExpandable
+    kendoTreeViewSelectable
+    >
+    <ng-template kendoTreeViewNodeTemplate let-dataItem>
+      <img *ngIf="dataItem.STATUS" 
+            [src]="getSrc(dataItem.STATUS)" 
+            class="status-img" >
+      <div [ngStyle]="{'color': getColor(dataItem.STATUS) , 'font-weight' : 700}">
+        {{dataItem.NAME}}
+      </div>
+    </ng-template>
+    
   </kendo-treeview>
 </div>
-<span class="k-i-loading k-icon" style="font-size: 64px;"></span>
+<span *ngIf="rootItems.length == 0" class="k-i-loading k-icon" style="font-size: 64px; top: 50%; "></span>
+</div>
