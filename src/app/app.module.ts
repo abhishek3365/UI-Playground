@@ -11,6 +11,8 @@ import { TreeViewModule } from '@progress/kendo-angular-treeview';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonsModule } from '@progress/kendo-angular-buttons';
 import { SplitterModule } from '@progress/kendo-angular-layout';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import { AppMaterialModule } from './app-material.module';
 
 @NgModule({
   declarations: [
@@ -22,10 +24,12 @@ import { SplitterModule } from '@progress/kendo-angular-layout';
   ],
   imports: [
     BrowserModule,
-    BrowserModule,
     ButtonsModule,
     SplitterModule,
-    TreeViewModule
+    TreeViewModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
