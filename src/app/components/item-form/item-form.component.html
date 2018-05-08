@@ -3,7 +3,10 @@
     <table style="text-align : left; width : 100%;">
       <tr >
         <td><label class="form-title-field">Type</label></td>
-        <td><kendo-dropdownlist [data]="itemTypes" ></kendo-dropdownlist></td>
+        <td><kendo-dropdownlist 
+              [data]="itemTypes" 
+              formControlName = "type"></kendo-dropdownlist>
+        </td>
       </tr>
       <tr>
         <td><label class="form-title-field">Code</label></td>
@@ -39,8 +42,12 @@
       </tr>
       <tr>
         <td><label class="form-title-field">Status</label></td>
-        <td><kendo-dropdownlist [data]="itemStatuses"></kendo-dropdownlist></td>
+        <td><kendo-dropdownlist 
+            [data]="itemStatuses"
+            formControlName = "status"></kendo-dropdownlist>
+        </td>
       </tr>
     </table>
+    <button (click)="onSubmit()">Locate</button>
   </form>
 </div>

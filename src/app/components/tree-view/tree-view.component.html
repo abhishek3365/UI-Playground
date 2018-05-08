@@ -9,6 +9,7 @@
     kendoTreeViewExpandable
     kendoTreeViewSelectable
     [animate]="true"
+    (selectionChange)="onItemSelected($event)"
     >
     <ng-template kendoTreeViewNodeTemplate let-dataItem>
       <img *ngIf="dataItem.STATUS" 

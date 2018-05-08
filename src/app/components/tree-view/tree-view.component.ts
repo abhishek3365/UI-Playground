@@ -3,6 +3,8 @@ import { ItemsService } from '../../services/items.service';
 import { Subscription } from 'rxjs/Subscription';
 import { of } from 'rxjs/observable/of';
 import { ItemStatus } from '../../model/item-status.model';
+import { Item } from '../../model/item.model';
+import { TreeItem } from '@progress/kendo-angular-treeview';
 
 @Component({
   selector: 'app-tree-view',
@@ -13,28 +15,31 @@ export class TreeViewComponent implements OnInit , OnDestroy{
 
     itemsSubscription : Subscription;
     
-    public rootItems : any[] = [];
-    public items: any[] ;
+    public rootItems : Item[]= [];
+    public items: Item[] ;
 
     constructor( private itemsService : ItemsService ) { 
         this.items = [];
         this.itemsSubscription =  itemsService.itemsChanged.subscribe( (items) => {
             this.items = items;
-            console.log( this.items );
-            this.rootItems = items.filter( item => !item["PARENT ID"] );
+            this.rootItems = items.filter( item => !item.PARENT_ID );
         } );
     }
 
     ngOnInit() {
     }
 
-    public hasChildren = ( item: any ) =>  { 
-        return this.items.filter( childItem => childItem["PARENT ID"] === item["ID"] ).length > 0;
+    public hasChildren = ( item: Item ) =>  { 
+        return this.items.filter( childItem => childItem.PARENT_ID === item.ID ).length > 0;
     }
    
-    public fetchChildren = (item: any) =>  { 
-        item.children = this.items.filter( childItem => childItem["PARENT ID"] === item["ID"] );
+    public fetchChildren = ( item: Item ) =>  { 
+        item.children = this.items.filter( childItem => childItem.PARENT_ID === item.ID );
         return of(item.children);
+    }
+
+    onItemSelected( treeItem : TreeItem ){
+        this.itemsService.itemSelected.next( treeItem.dataItem );
     }
     
     getColor( status : string ) {
