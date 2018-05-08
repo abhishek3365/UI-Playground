@@ -2,3 +2,7 @@
     font-size: 18px;
     font-weight: 700;
 }
+
+.form-text-field {
+    background-color: rgba(81,89,103,0.08); 
+}

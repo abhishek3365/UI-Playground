@@ -6,5 +6,8 @@ export class ItemStatus {
     public static FROZEN = 'FROZEN';
     public static OK = 'OK';
     
+    static getList() : Array<string> {
+        return [ this.OK , this.FROZEN , this.WARNING , this.MALFUNCTION , this.MAINTENANCE ];
+    }
 
 }

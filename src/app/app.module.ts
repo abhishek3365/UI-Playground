@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LabelModule } from '@progress/kendo-angular-label';
 import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { TextBoxModule } from '@progress/kendo-angular-inputs';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { TextBoxModule } from '@progress/kendo-angular-inputs';
     HttpClientModule,
     DropDownListModule,
     LabelModule,
-    TextBoxModule
+    TextBoxModule,
+    ReactiveFormsModule
   ],
   providers: [ ItemsService ],
   bootstrap: [AppComponent]

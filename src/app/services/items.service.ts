@@ -16,7 +16,7 @@ export class ItemsService{
         this.http.get<any>(  'http://localhost:3000/api/items' )
         .subscribe((data) => {
           this.items = data;
-          this.itemsChanged.next( this.items );
+          this.itemsChanged.next( this.items.slice() );
         }, (err) => {
             console.log(err);
         });

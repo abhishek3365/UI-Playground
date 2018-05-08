@@ -1,29 +1,45 @@
 <div style="padding: 10px;">
-  <form >
+  <form [formGroup] = "itemForm">
     <table style="text-align : left; width : 100%;">
       <tr >
-        <td class=" col-xs-3"><label class="form-title-field">Type</label></td>
-        <td class=" col-xs-9"><kendo-dropdownlist [data]="listItems" ></kendo-dropdownlist></td>
+        <td><label class="form-title-field">Type</label></td>
+        <td><kendo-dropdownlist [data]="itemTypes" ></kendo-dropdownlist></td>
       </tr>
       <tr>
         <td><label class="form-title-field">Code</label></td>
-        <td><kendo-textbox-container style="padding: 0px;"><input kendoTextBox /></kendo-textbox-container></td>
+        <td><input 
+              kendoTextBox 
+              class="form-text-field"
+              formControlName = "code"/>
+        </td>
       </tr>
       <tr>
         <td><label class="form-title-field">Name</label></td>
-        <td><kendo-textbox-container style="padding: 0px;"><input kendoTextBox /></kendo-textbox-container></td>
+        <td><input 
+              kendoTextBox 
+              class="form-text-field"
+              formControlName = "name"/>
+        </td>
       </tr>
       <tr>
         <td><label class="form-title-field">Description</label></td>
-        <td><kendo-textbox-container style="padding: 0px;"><input kendoTextBox /></kendo-textbox-container></td>
+        <td><input 
+              kendoTextBox 
+              class="form-text-field"
+              formControlName = "description"/>
+        </td>
       </tr>
       <tr>
         <td><label class="form-title-field">IP Address</label></td>
-        <td><kendo-textbox-container style="padding: 0px;"><input kendoTextBox /></kendo-textbox-container></td>
+        <td><input 
+              kendoTextBox 
+              class="form-text-field"
+              formControlName = "ip_address"/>
+        </td>
       </tr>
       <tr>
         <td><label class="form-title-field">Status</label></td>
-        <td><kendo-dropdownlist [data]="listItems"></kendo-dropdownlist></td>
+        <td><kendo-dropdownlist [data]="itemStatuses"></kendo-dropdownlist></td>
       </tr>
     </table>
   </form>
