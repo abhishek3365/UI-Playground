@@ -15,7 +15,8 @@ export class ItemsService{
     }
 
     setItems() {
-        this.http.get<Item[]>(  'http://localhost:3000/api/items' )
+        var url = 'http://localhost:3000/api/items';
+        this.http.get<Item[]>( 'assets/items.json'  )
         .subscribe( (data) => {
           this.items = data;
           this.itemsChanged.next( this.items.slice() );
