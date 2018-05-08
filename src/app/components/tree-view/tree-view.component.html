@@ -8,6 +8,7 @@
     [children]="fetchChildren"
     kendoTreeViewExpandable
     kendoTreeViewSelectable
+    [animate]="true"
     >
     <ng-template kendoTreeViewNodeTemplate let-dataItem>
       <img *ngIf="dataItem.STATUS" 
@@ -19,6 +20,6 @@
     </ng-template>
     
   </kendo-treeview>
-</div>
-<span *ngIf="rootItems.length == 0" class="k-i-loading k-icon" style="font-size: 64px; top: 50%; "></span>
+  </div>
+  <span *ngIf="rootItems.length == 0" class="k-i-loading k-icon tree-loader" ></span>
 </div>

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemFormComponent implements OnInit {
 
+  public listItems: Array<string> = ["X-Small", "Small", "Medium", "Large", "X-Large", "2X-Large"];
+
   constructor() { }
 
   ngOnInit() {

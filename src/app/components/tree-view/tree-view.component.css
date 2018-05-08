@@ -1,5 +1,11 @@
-.status-img{
+.status-img {
     height: 20px; 
     width : 20px;
     margin-right: 5px;
+}
+
+.tree-loader{
+    font-size: 64px;
+    position: relative;
+    top : 50%;
 }

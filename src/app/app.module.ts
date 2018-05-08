@@ -15,6 +15,9 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './app-material.module';
 import { ItemsService } from './services/items.service';
 import { HttpClientModule } from '@angular/common/http';
+import { LabelModule } from '@progress/kendo-angular-label';
+import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
+import { TextBoxModule } from '@progress/kendo-angular-inputs';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     AppMaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    DropDownListModule,
+    LabelModule,
+    TextBoxModule
   ],
   providers: [ ItemsService ],
   bootstrap: [AppComponent]
