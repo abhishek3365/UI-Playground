@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  sites = ['Site 1', 'Site 1', 'Site 1'];
+
   constructor() { }
 
   ngOnInit() {

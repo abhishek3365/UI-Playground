@@ -1,1 +1,8 @@
-<img src="assets/logo.png"  class="header-logo">
+<div class="header-container">
+    <img src="assets/logo.png" class="header-logo">
+    <div class="options">
+      <input kendoTextBox class="form-text-field basic-padding" placeholder="Filter" />
+      <kendo-dropdownlist [data]="sites"></kendo-dropdownlist>
+    </div>
+  </div>
+  
