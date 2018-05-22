@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as L from "leaflet";
 import "leaflet";
+import getPixels from "get-pixels";
 
 @Component({
   selector: 'app-map',
@@ -12,6 +13,7 @@ export class MapComponent implements OnInit {
   isLoading: boolean;
 
   constructor() {
+    console.log(getPixels);
     this.isLoading = true;
   }
 
@@ -35,6 +37,14 @@ export class MapComponent implements OnInit {
 
     var bounds = new L.LatLngBounds(new L.LatLng(0, 0), new L.LatLng(10000, 14000))
     var image = L.imageOverlay('assets/logo.png', bounds).addTo(map);
+
+    getPixels("assets/logo.png", function(err, pixels) {
+      if(err) {
+        console.log("Bad image path")
+        return
+      }
+      console.log("got pixels", pixels.shape.slice())
+    })
 
     map.fitBounds( bounds );
 

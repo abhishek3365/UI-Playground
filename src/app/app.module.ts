@@ -20,7 +20,7 @@ import { DropDownListModule } from '@progress/kendo-angular-dropdowns';
 import { TextBoxModule } from '@progress/kendo-angular-inputs';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import "leaflet"; 
+import "leaflet";   
 
 @NgModule({
   declarations: [
